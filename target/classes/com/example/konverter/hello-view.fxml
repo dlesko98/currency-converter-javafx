@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -25,17 +26,7 @@
           <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="Label1" text="Hrvatska kuna" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="Label3" text="Euro" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="HRKTextField" maxWidth="200.0" onAction="#onEnter" prefHeight="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <TextField fx:id="FirstCurrency" maxWidth="200.0" prefHeight="45.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="30.0" />
                </GridPane.margin>
@@ -43,7 +34,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="EURTextField" editable="false" maxWidth="200.0" prefHeight="45.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <TextField fx:id="SecondCurrency" editable="false" maxWidth="200.0" prefHeight="45.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="30.0" />
                </GridPane.margin>
@@ -59,7 +50,7 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <Label fx:id="Label2" text="HRK" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Label fx:id="Label1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="30.0" right="60.0" />
                </GridPane.margin>
@@ -67,7 +58,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="Label4" text="EUR" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Label fx:id="Label2" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="30.0" right="60.0" />
                </GridPane.margin>
@@ -86,7 +77,7 @@
                   <Image url="@img/swap.png" />
                </image>
             </ImageView>
-            <Label text="Izračun konverzije" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+            <Label text="Conversion calculation" GridPane.columnSpan="2" GridPane.halignment="CENTER">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -94,11 +85,13 @@
                   <Insets bottom="50.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Fiksni tečaj konverzije: 7.53450" textFill="#020294" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Label fx:id="rateLabel" textFill="#020294" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <ChoiceBox fx:id="firstCurrencyChoice" prefHeight="35.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+            <ChoiceBox fx:id="secondCurrencyChoice" prefHeight="35.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
          </children>
       </GridPane>
    </children>
